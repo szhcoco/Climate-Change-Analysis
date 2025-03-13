@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1ea7b52618a36b480721a905421d406abf363b4c" media="screen" type="text/css">
+    <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Syn1 Final Project – Visualization of Climate Crisis | Climate-Change-Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Syn1 Final Project – Visualization of Climate Crisis" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Climate-Change-Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Syn1 Final Project – Visualization of Climate Crisis" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Syn1 Final Project – Visualization of Climate Crisis","name":"Climate-Change-Analysis","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="http://localhost:4000/">
+          <h1>Climate-Change-Analysis</h1>
+        </a>
+        <h2></h2>
+        
+          <a href="https://github.com/szhcoco/Climate-Change-Analysis" class="button"><small>View project on</small> GitHub</a>
+        
+        
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1 id="syn1-final-project--visualization-of-climate-crisis">Syn1 Final Project – Visualization of Climate Crisis</h1>
+
+<p>by Coco Sun (zihansun@ucsd.edu)</p>
+
+<h2 id="overview">Overview</h2>
+<p>This report is going to discuss climate changes through visualizations of statistics obtained from several datasets found in Kaggle website. It includes descriptions of the overall process writing this final project, three plots, and analysis of the plots. To see the complete code that generate the plots, here is the link to the ipynb file: <a href="/final_proj.ipynb">link to the ipynb file</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Inspired by articles such as <em>“101: Breaking Down Greenhouse Gases”</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> that provide statistics of global warming, I want to dig deeper into the numbers through finding and exploring datasets from Kaggle about climate to visualize its impact.</p>
+
+<p>I would primarily focus on two datasets. 
+The first dataframe <code class="language-plaintext highlighter-rouge">Average Monthly surface temperature (1940-2024)</code><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> provides information about the change of global surface temperature from 1940 to 2024.</p>
+
+<p>The dataframe after cleaning and re-organizing contains 16575 rows and 4 columns, with the first 5 rows presented below:</p>
+
+<p><img src="/screenshots/avg_temp_head.png" alt="first 5 rows of avg_temp" /></p>
+
+<p>Then examining closer to relevant events, I would analyze the dataset <code class="language-plaintext highlighter-rouge">California Wildfire Damage (2014-(fed)2025)</code><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>, with a help of another dataset <code class="language-plaintext highlighter-rouge">California cities dataset</code><sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> to map out the locations where the wildfires have happened.</p>
+
+<p>The dataframe of <code class="language-plaintext highlighter-rouge">California Wildfire Damage (2014-(fed)2025)</code> contains 100 rows and 11 columns in which each row presents a wildfire happening betwen 2014 and 2025, and again the first 5 rows is presented below:</p>
+
+<p><img src="/screenshots/wildfires_cali_head.png" alt="first 5 rows of wildfires_cali" /></p>
+
+<p>In the following sections, I would create three visualizations to show the impact of the climate change using the dataframe introduced above.</p>
+
+<h2 id="global-warming-through-global-surface-temperature">Global Warming through Global Surface Temperature</h2>
+
+<p>While we’ve learned in class that “temperature” is an important indication of global warming, surface temperature is never mentioned as an major consequence of climate change and also essential and relevant to our daily life. Surface temperature is the measure of temperature from the ground, and an increasing in surface temperature would lead to increase in sea levels, change in rainfall patterns, as well as damage to the farming systems.</p>
+
+<p>From the choropleth map below, we could detect  slight changes of surface temperature over 1940 and 2024. The lighter and darker color refers to lower and higher surface temperature correspondingly.</p>
+
+<iframe src="assets/choropleth_avg_temp.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>To better examine the trend of increase, we can directly calculate the surface temperature difference from 1940 to 2024.</p>
+
+<p>In the dataframe <code class="language-plaintext highlighter-rouge">temp_diff</code>, each row is a country and its corresponding surface temperature difference in the 40 years. The column <code class="language-plaintext highlighter-rouge">Code</code> is included to generate the scatter plot later.</p>
+
+<p><img src="/screenshots/temp_diff_head.png" alt="first 5 rows of temp_diff" /></p>
+
+<p>Then we create a 3D scatter plot based on the information in the <code class="language-plaintext highlighter-rouge">temp_diff</code> dataframe:</p>
+
+<iframe src="assets/scatter3D_temp_diff.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>The 3D scatter plot is an interesting visualization to see the surface temperature change, which includes interactive designs that allows users to rotate and zoom into the plot. Each dot presents the value of surface temperature change corresponds to the location of the country, and same as before darker color implies greater increase of surface temperature.</p>
+
+<p>As you can see from the scale on the right, all values plotted are above 0, meaning that globally we are experiencing an increase in surface tempearture.</p>
+
+<p>To look into more details in the dataframe, the minimum and maximum of surface temperature change is:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">temp_diff</span><span class="p">[</span><span class="s">'temp_diff_1940_2024'</span><span class="p">].</span><span class="nb">min</span><span class="p">())</span>
+</code></pre></div></div>
+<p><img src="screenshots/min_temp_diff.png" alt="min surface temperature difference" height="30" width="300" /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">temp_diff</span><span class="p">[</span><span class="s">'temp_diff_1940_2024'</span><span class="p">].</span><span class="nb">max</span><span class="p">())</span>
+</code></pre></div></div>
+<p><img src="screenshots/max_temp_diff.png" alt="max surface temperature difference" height="30" width="200" /></p>
+
+<p>Additionally, the surface temperature change in USA is about 2.7 as you can see from the plot.</p>
+
+<h2 id="climate-change-around-us-wildfires-in-california">Climate Change Around Us: Wildfires in California</h2>
+
+<p>Inspired by words professor Hayhoe in her presentation <em>From Global Change to Local Action</em><sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>, in this section I am going to consider events that are more relavant to us, by examining the frequency of wildfires in California.</p>
+
+<p>Recall the dataset <code class="language-plaintext highlighter-rouge">wildfires_cali</code><sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> contains (incomplete) information about wildfires happening in california from 2014 and 2025. In order to visualize the frequency of wildfires each year on a scatter map, I merged the <code class="language-plaintext highlighter-rouge">wildfires_cali</code> with <code class="language-plaintext highlighter-rouge">California cities dataset</code><sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>, so that we could see boundaries of cities in California.</p>
+
+<p>This is an overview of <code class="language-plaintext highlighter-rouge">California cities dataset</code><sup id="fnref:4:2" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>, as named    <code class="language-plaintext highlighter-rouge">cali_lat_lon</code>, each row includes information for specific location of California cities. It is neceessary to generate the scatter plot that maps the bounddaries of cities.</p>
+
+<p><img src="screenshots/cali_loc.png" alt="first 5 rows of cali_lat_lon" /></p>
+
+<p>Then we can generate the scatter plot:</p>
+
+<iframe src="assets/wildfires_cali.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>As shown in the scatter plot, the dots represent events of wildfire happening at the specific locations, and the size of the dots is proportional to the area burned measured in acres. The plot is also interactive so that users can drag to any directions to see other locations, or hover on the dot to see the more specific information of the fire, including the cause, the year it happened, and the area it affected.</p>
+
+<p>The bar at the bottom allows animations to see the frequecies of wildfires in each year from 2014 to 2023. In 2014, <code class="language-plaintext highlighter-rouge">wildfires_cali</code><sup id="fnref:3:2" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> documents four fires, scattered in different places in California and affected relatively small regions of area. Starting from 2018 to 2023, the fires begin to concentrate more near Los Angeles and also have dots in larger size with some affected area overlapped.</p>
+
+<p>The scatter plot alone may not be a powerful evidence to show the tendency for an increase in frequency and seriesness of the wildfire in recent years. But its indication for wildfires to occur more densely and to broadly impact should alarm us of the progressing of climate change. Moreover, the dataset itself is not a complete list of wildfires occurred, as it contains no information for wildfires happening in 2025, when the LA fire destroys land and homes to hundreds of thousands of people. Thus it definitely deserves more attention for people not just predicting and reducing the occurrence of wildfires but also addressing the problem of global warming at the root.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The process of examining and creating visualizations based on statistics is interesting as I could identify hidden meanings behind graph and numbers. But at the same time the plots make the climate crisis so concrete that I am able to feel its ur</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>https://atmos.earth/101-breaking-down-greenhouse-gases/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>https://www.kaggle.com/datasets/samithsachidanandan/average-monthly-surface-temperature-1940-2024 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>https://www.kaggle.com/datasets/vivekattri/california-wildfire-damage-2014-feb2025 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:3:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>https://www.kaggle.com/datasets/camnugent/california-housing-feature-engineering <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:4:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:4:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>https://www.youtube.com/watch?v=Wd0DNHL9QTo&amp;t=30s <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        </section>
+
+        <aside id="sidebar">
+          
+
+          
+            <p class="repo-owner"><a href="https://github.com/szhcoco/Climate-Change-Analysis">Climate-Change-Analysis</a> is maintained by <a href="https://github.com/szhcoco">szhcoco</a>.</p>
+          
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  </body>
+</html>
